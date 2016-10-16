@@ -1,0 +1,49 @@
+input {
+    margin-bottom: 5px;
+    background-color: #ffc600; 
+    /*I know I can just write yellow here, but that neon yellow color was way too offensive.*/
+}
+
+fieldset {
+    border: 2px black solid;
+    margin: 0 5em 2em 5em;
+}
+
+legend {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#last_name {
+    font-weight: bold;
+}
+
+#footnote {
+    font-size: 65%;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+button, input[type=submit] {
+    padding: 0.8em;
+    border-radius: 8px;
+    background-color: #ffc600;
+    border: none;
+    margin-top: 10px;
+}
+
+#button-font, input[type=submit] {
+    text-decoration: none;
+    color: black;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.flash-msg {
+    padding: 1em;
+    background-color: #ffc600;
+    color: black;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
