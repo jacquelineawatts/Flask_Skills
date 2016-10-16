@@ -21,16 +21,32 @@
 
 <!-- ######################## Application Form ######################## -->
 <form action="/application" method='POST'>
-  <label for="first_name">First name: </label><input type="text" name="first_name" id="first_name"><br>
-  <label for="last_name">Last name: </label><input type="text" name="last_name" id="last_name"><br>
-  <label for="salary">Salary Requirement:* </label><input type="number" name="salary" id="salary"><br>
+  <label for="first_name">First name: </label><input type="text" name="first_name" id="first_name" value="{{ application_progress[0] }}"><br>
+
+  <label for="last_name">Last name: </label><input type="text" name="last_name" id="last_name" value="{{ application_progress[1] }}"><br>
+
+  <label for="salary">Salary Requirement:* </label><input type="number" name="salary" id="salary" value="{{ application_progress[2] }}"><br>
+
+<!--  Setting default value from session key was straight forward for all other inputs, but for dropdown I can only think of using a for loop and this feels a little clunky. Is there a more elegant way to do this? -->
+
+  <label for="position">Position of Interest: </label>
+  <select name="position" id="position">
+    {% for position in positions %}
+        <option value="{{ position }}" {% if position == application_progress[3] %} selected="selected" {% endif %}> {{ position }} </option>
+    {% endfor %}
+  </select><br>
+
+<!-- Regular way to construct dropdown without session handling: 
   <label for="position">Position of Interest: </label>
   <select name="position" id="position">
     <option value="Software Engineer">Software Engineer</option>
     <option value="QA Engineer">QA Engineer</option>
     <option value="Product Manager">Product Manager</option>
   </select><br>
+ -->
+ 
   <input id="#submit" type="submit" value="Submit">
+
   <p id="footnote">* Please enter in numeric format (i.e. 80000, not 80K)</p>
 </form>
 </fieldset>

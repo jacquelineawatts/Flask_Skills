@@ -40,7 +40,7 @@ button, input[type=submit] {
 }
 
 .flash-msg {
-    padding: 1em;
+    padding: 1em 5em 1em 5em;
     background-color: #ffc600;
     color: black;
     font-family: sans-serif;
